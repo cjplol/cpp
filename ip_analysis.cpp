@@ -8,7 +8,7 @@ class IP{
     // private: //私有成员
     //     string ip_address;
 
-        IP(){
+        IP(){  //构造函数（Constructer），在创建一个MyObject对象时，它的构造函数会被自动调用
             ip_address="10.32.155.99";
             subnet_mask="255.255.240.0";
             gateway="10.32.144.1";
