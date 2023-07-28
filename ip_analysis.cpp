@@ -38,6 +38,8 @@ class IP{
 int main(){
     IP ip;
     //cout<<ip.ip_address<<endl; //公有成员可以查看属性，私有成员不能，需要通过类方法调用
+    // cout<<"请输入IP地址：";
+    // cin>>ip.ip_address;
     cout<<"IP地址为："<<ip.get_ip_address()<<endl;
     cout<<"IP地址类别："<<ip.get_category()<<"类"<<endl;
     //cout<<"aaa"<<endl;
