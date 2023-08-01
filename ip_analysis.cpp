@@ -1,12 +1,14 @@
 #include<iostream>
+#include <sstream>
+#include<vector>
+#include<bitset>
+
 using namespace std;
 class IP{
     public: //公有成员
         string ip_address; //ip地址
         string subnet_mask; //子网掩码
         string gateway; //网关
-    // private: //私有成员
-    //     string ip_address;
 
         IP(){  //构造函数（Constructer），在创建一个MyObject对象时，它的构造函数会被自动调用
             ip_address="10.32.155.99";
@@ -32,7 +34,29 @@ class IP{
             return category;
         }
 
+        //通过子网掩码返回划分的网段
+        void get_segment_from_mask(){
+            std::stringstream ss(subnet_mask);
+            std::vector<int> bytes;
+            std::string byte_str;
+            char delimiter;
 
+            while (getline(ss, byte_str, '.')) {
+                bytes.push_back(std::stoi(byte_str));
+            }
+            for (int i = 0; i < bytes.size(); i++) {
+                if (bytes[i]!=255){
+                    
+                }
+                //std::cout << bytes[i] << " ";
+            }
+        }
+
+        private: //私有成员
+            //string ip_address;
+            void dtob(){  //十进制转二进制
+
+            }
 };
 
 int main(){
@@ -43,6 +67,7 @@ int main(){
     cout<<"IP地址为："<<ip.get_ip_address()<<endl;
     cout<<"IP地址类别："<<ip.get_category()<<"类"<<endl;
     //cout<<"aaa"<<endl;
+    ip.get_segment_from_mask();
     system("pause");
     return 0;
 }
