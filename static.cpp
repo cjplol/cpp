@@ -61,6 +61,7 @@ int main(){
     //cout<<player1.maxHealth<<endl;
     Player::printPlayerNum();
     Player::printPlayerList();
+    //xixi
     system("pause");
     return 0;
 }
